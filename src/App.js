@@ -1,7 +1,8 @@
 import logo from './log.svg';
 import './App.css';
-import * as dayjs from "dayjs";
-import { nanoid } from 'nanoid';
+import { getCurrentDate, getId } from "./helpers";
+import { getRandomColor, getRandomName } from "./random";
+
 
 function App() {
   return (
@@ -13,8 +14,11 @@ function App() {
           Hello World!
         </p>
         <p>Ovo je React aplikacija koja prikazuje trenutni datum i ID korisnika.</p>
-        <p>Today is {dayjs().format('MMMM DD, YYYY HH:mm:ss')}</p>
-        <p>Your unique ID is {nanoid(8)}</p>
+        <p>Today is {getCurrentDate()}</p>
+        <p>Your unique ID is {getId()}</p>
+        <p>Boja koju ste dobili je {getRandomColor()}.
+          Ime koje ste dobili je {getRandomName()}.
+        </p>
 
         <a
           className="App-link"
